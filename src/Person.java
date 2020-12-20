@@ -1,9 +1,11 @@
+// Person Class.
 public class Person implements Comparable
 {
     private String name;
     private int idNumber;
     private int birthYear;
 
+    // Constructor.
     public Person(String name, int idNumber, int birthYear)
     {
         this.setName(name);

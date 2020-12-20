@@ -1,3 +1,4 @@
+// This Class purpose is to act as a generic Node for List Class implementation.
 public class Cell <E>
 {
     // data parameter
@@ -5,11 +6,13 @@ public class Cell <E>
     // next cell parameter.
     private Cell nextCell;
 
+    // Constructor
     public Cell(E data)
     {
         this.setData(data);
     }
 
+    // Constructor #2 - Creates a Node with a data for the new node & the next node to be attached to.
     public Cell(E data, Cell nextCell)
     {
         this.setData(data);
@@ -28,7 +31,6 @@ public class Cell <E>
 
     public void setNextCell(Cell nextCell)
     {
-//        nextCell.nextCell = this.nextCell;
         this.nextCell = nextCell;
     }
 

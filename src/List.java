@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 
+// Generic List Class; this Class uses Cell as nodes for the List.
 public class List <E>
 {
     private Cell head;
     private Cell tail;
 
+    // Constructor.
     public List()
     {
         head = tail = new Cell(null);
@@ -20,6 +22,7 @@ public class List <E>
         return this.tail;
     }
 
+    // adds a Cell node to the end of the List.
     public void add(E data)
     {
         if (isEmpty())
@@ -34,6 +37,7 @@ public class List <E>
         }
     }
 
+    // removes a Cell node from the Head of the list.
     public E remove() throws EmptyListException
     {
         if (this.head == null)
@@ -46,6 +50,7 @@ public class List <E>
         }
     }
 
+    // checks if the List is empty from Cell nodes with data.
     private boolean isEmpty()
     {
         return this.getHead() == this.getTail() && this.head.getData() == null;
@@ -66,6 +71,10 @@ public class List <E>
 
     // This Function purpose is to invert a list from a given List - 'origin' until the end of the list.
     // The origin List we be left un-touched, and the inverted List will be returned.
+    // logics - one pass to invert the whole List;
+    //          second node points to first node,
+    //          first is been update to second, second is updated to third;
+    //          goes on until third reaches end of the list (null object)
     public List invertedList()
     {
         List toReturn = new List();

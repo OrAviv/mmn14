@@ -7,23 +7,25 @@ public class Main
     public static void main(String[] args) throws EmptyListException
     {
         Scanner scanner = new Scanner(System.in);
-//        List <String> myList = new List<>();
-//        System.out.println("Hello! please insert 6 strings to the list.");
-//        for (int i=0; i<6; i++)
-//        {
-//            System.out.println("Please insert String number "+(i+1)+":");
-//            myList.add(scanner.nextLine());
-//        }
-//        System.out.println("Your List:\n" + myList.toString());
-//
-//        List <String> inverted = myList.invertedList();
-//        System.out.println("your list inverted:\n" + inverted.toString());
+        List <String> myList = new List<>();
+        System.out.println("Hello! please insert 6 strings to the list.");
+        for (int i=0; i<6; i++)
+        {
+            System.out.println("Please insert String number "+(i+1)+":");
+            myList.add(scanner.nextLine());
+        }
+        System.out.println("Your List:\n" + myList.toString());
+
+        List <String> inverted = myList.invertedList();
+        System.out.println("your list inverted:\n" + inverted.toString());
 
         List<Person> personList = new List<>();
         personList.add(new Person("Or", 1234, 1993));
         personList.add(new Person("yossi", 4321, 1992));
         personList.add(new Person("moshe", 2233, 2001));
-        Person maxAge = max(personList);
+        personList.add(new Person("asher", 3456, 1980));
+        personList.add(new Person("jhon", 7675, 1981));
+        System.out.println("Oldest person in Persons List: "+max(personList).toString());
     }
 
     // generic function for comparison between to Comparable objects.
