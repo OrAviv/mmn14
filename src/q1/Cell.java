@@ -1,4 +1,6 @@
-// This Class purpose is to act as a generic Node for List Class implementation.
+package q1;
+
+// This Class purpose is to act as a generic Node for q1.List Class implementation.
 public class Cell <E>
 {
     // data parameter

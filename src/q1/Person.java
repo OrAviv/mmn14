@@ -1,4 +1,6 @@
-// Person Class.
+package q1;
+
+// q1.Person Class.
 public class Person implements Comparable
 {
     private String name;
@@ -57,7 +59,7 @@ public class Person implements Comparable
     @Override
     public String toString()
     {
-        return "Person{" +
+        return "q1.Person{" +
                 "name='" + name + '\'' +
                 ", idNumber=" + idNumber +
                 ", birthYear=" + birthYear +

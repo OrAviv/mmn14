@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+package q1;
 
-// Generic List Class; this Class uses Cell as nodes for the List.
+// Generic q1.List Class; this Class uses q1.Cell as nodes for the q1.List.
 public class List <E>
 {
     private Cell head;
@@ -22,7 +22,7 @@ public class List <E>
         return this.tail;
     }
 
-    // adds a Cell node to the end of the List.
+    // adds a q1.Cell node to the end of the q1.List.
     public void add(E data)
     {
         if (isEmpty())
@@ -37,7 +37,7 @@ public class List <E>
         }
     }
 
-    // removes a Cell node from the Head of the list.
+    // removes a q1.Cell node from the Head of the list.
     public E remove() throws EmptyListException
     {
         if (this.head == null)
@@ -50,7 +50,7 @@ public class List <E>
         }
     }
 
-    // checks if the List is empty from Cell nodes with data.
+    // checks if the q1.List is empty from q1.Cell nodes with data.
     private boolean isEmpty()
     {
         return this.getHead() == this.getTail() && this.head.getData() == null;
@@ -69,9 +69,9 @@ public class List <E>
         return strToReturn;
     }
 
-    // This Function purpose is to invert a list from a given List - 'origin' until the end of the list.
-    // The origin List we be left un-touched, and the inverted List will be returned.
-    // logics - one pass to invert the whole List;
+    // This Function purpose is to invert a list from a given q1.List - 'origin' until the end of the list.
+    // The origin q1.List we be left un-touched, and the inverted q1.List will be returned.
+    // logics - one pass to invert the whole q1.List;
     //          second node points to first node,
     //          first is been update to second, second is updated to third;
     //          goes on until third reaches end of the list (null object)
