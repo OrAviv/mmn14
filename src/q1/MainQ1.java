@@ -2,7 +2,7 @@ package q1;
 
 import java.util.Scanner;
 
-public class Main
+public class MainQ1
 {
 
     public static void main(String[] args) throws EmptyListException
