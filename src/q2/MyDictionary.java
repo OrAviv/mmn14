@@ -15,14 +15,19 @@ public class MyDictionary extends ArrayList
     public void add(DictNode dictNode)
     {
         if (myDictionary.isEmpty())
-            myDictionary.add(dictNode);
-
+        {
+            this.myDictionary.add(dictNode);
+            return;
+        }
         DictNode index;
         for (int i=0; i < myDictionary.size(); i++)
         {
             index = (DictNode) myDictionary.get(i);
             if (index.compareTo(dictNode) <= 0)
+            {
                 myDictionary.add(i, dictNode);
+                return;
+            }
         }
         myDictionary.add(dictNode);
     }
@@ -82,10 +87,11 @@ public class MyDictionary extends ArrayList
         }
 
         DictNode index;
+        DictNode keyNode = new DictNode(key, null);
         for (int i=0; i < this.myDictionary.size(); i++)
         {
             index = (DictNode) this.myDictionary.get(i);
-            if (index.compareTo(key) == 0)
+            if (index.compareTo(keyNode) == 0)
             {
                 return i;
             }
@@ -93,22 +99,36 @@ public class MyDictionary extends ArrayList
         return -1;
     }
 
-    public MyDictionary parser(String filePath) throws IOException
+    public String getValueByKey(int keyIndex)
     {
-        MyDictionary dictToReturn = new MyDictionary();
+        DictNode valueNode = (DictNode) this.myDictionary.get(keyIndex);
+        return valueNode.getValue();
+    }
 
-        FileReader input = new FileReader(filePath);
-        BufferedReader bufRead = new BufferedReader(input);
-        String myLine;
+    public boolean parser(String filePath) throws IOException
+    {
 
-        while ( (myLine = bufRead.readLine()) != null)
+        try
         {
-            String[] dictLine = myLine.split(":");
-            String keyPart = dictLine[0].trim();
-            String valuePart = dictLine[1].trim();
-            dictToReturn.add(new DictNode(keyPart, valuePart));
+            FileReader input = new FileReader(filePath);
+            BufferedReader bufRead = new BufferedReader(input);
+            String myLine;
+            while ( (myLine = bufRead.readLine()) != null)
+            {
+                if (myLine.isBlank())
+                    continue;
+                String[] dictLine = myLine.split(":");
+                String keyPart = dictLine[0].trim();
+                String valuePart = dictLine[1].trim();
+                this.myDictionary.add(new DictNode(keyPart, valuePart));
+            }
+            return true;
         }
-        return dictToReturn;
+        catch (IOException e)
+        {
+            return false;
+        }
+
     }
 
     @Override
