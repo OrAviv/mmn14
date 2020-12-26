@@ -23,7 +23,7 @@ public class MyDictionary extends ArrayList
         for (int i=0; i < myDictionary.size(); i++)
         {
             index = (DictNode) myDictionary.get(i);
-            if (index.compareTo(dictNode) <= 0)
+            if (index.compareTo(dictNode) >= 0)
             {
                 myDictionary.add(i, dictNode);
                 return;

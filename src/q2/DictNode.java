@@ -1,5 +1,7 @@
 package q2;
 
+// DictNode (Dictionary Node) - this class holds tuples of 'key & value'
+//  with basic setter & getter, toString and comparable.
 public class DictNode implements Comparable
 {
     private String key;

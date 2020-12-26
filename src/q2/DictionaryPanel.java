@@ -1,5 +1,4 @@
 package q2;
-
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.awt.*;
@@ -10,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+// Main Panel class; different panels & theirs components are separated by new lines.
 public class DictionaryPanel extends JPanel
 {
     JPanel panel;
@@ -42,6 +42,7 @@ public class DictionaryPanel extends JPanel
     JTextField exportFolder;
     JLabel exportResult;
 
+    // Constructor.
     public DictionaryPanel()
     {
         myDictionary = new MyDictionary();
@@ -49,6 +50,7 @@ public class DictionaryPanel extends JPanel
         FlowLayout myLayout = new FlowLayout();
         setLayout(myLayout);
 
+        // Main Panel initials.
         mainLabel = new JLabel("Press Load to insert a path to '.txt' Dictionary");
         resultLabel = new JLabel();
         loaderButton = new JButton("Load Dictionary");
@@ -60,6 +62,7 @@ public class DictionaryPanel extends JPanel
         loaderPanel.add(loaderButton);
         loaderPanel.add(resultLabel);
 
+        // Search Panel initials.
         searchButton = new JButton("Search");
         searchKey = new JTextField(10);
         searchResult = new JLabel();
@@ -71,6 +74,7 @@ public class DictionaryPanel extends JPanel
         searchPanel.add(searchKey);
         searchPanel.add(searchResult);
 
+        // Add Panel initials.
         addButton = new JButton("Add");
         addKeyField = new JTextField("//Enter Key Here", 20);
         addValueField = new JTextField("//Enter Value Here", 20);
@@ -84,6 +88,7 @@ public class DictionaryPanel extends JPanel
         addPanel.add(addValueField);
         addPanel.add(addResult);
 
+        // Update Panel initials.
         updateButton = new JButton("Update");
         updateKeyField = new JTextField("//Enter Key Here", 20);
         updateValueField = new JTextField("//Enter Value Here", 20);
@@ -97,6 +102,7 @@ public class DictionaryPanel extends JPanel
         updatePanel.add(updateValueField);
         updatePanel.add(updateResult);
 
+        // Remove Panel initials.
         removeButton = new JButton("Remove");
         removeKeyField = new JTextField("//Enter Key Here", 20);
         removeResult = new JLabel();
@@ -108,6 +114,7 @@ public class DictionaryPanel extends JPanel
         removePanel.add(removeKeyField);
         removePanel.add(removeResult);
 
+        // Export Panel initials.
         export = new JButton("Export Dictionary");
         exportFolder = new JTextField("//Export file path", 20);
         exportResult = new JLabel();
@@ -118,7 +125,6 @@ public class DictionaryPanel extends JPanel
         exportPanel.add(export);
         exportPanel.add(exportFolder);
         exportPanel.add(exportResult);
-
 
         add(loaderPanel);
         add(searchPanel);

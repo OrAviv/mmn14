@@ -1,7 +1,7 @@
 package q2;
-
 import javax.swing.*;
 
+// Frame Class for Dictionary.
 public class DictionaryFrame extends JFrame
 {
     JFrame frame;
@@ -15,10 +15,5 @@ public class DictionaryFrame extends JFrame
         panel = new DictionaryPanel();
         frame.add(panel);
         frame.setVisible(true);
-
     }
-
-
-
-
 }
