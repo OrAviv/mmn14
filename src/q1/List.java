@@ -3,8 +3,8 @@ package q1;
 // Generic q1.List Class; this Class uses q1.Cell as nodes for the q1.List.
 public class List <E>
 {
-    private Cell head;
-    private Cell tail;
+    private Cell<E> head;
+    private Cell<E> tail;
 
     // Constructor.
     public List()
@@ -12,12 +12,12 @@ public class List <E>
         head = tail = new Cell(null);
     }
 
-    public Cell getHead()
+    public Cell <E> getHead()
     {
         return this.head;
     }
 
-    public Cell getTail()
+    public Cell <E> getTail()
     {
         return this.tail;
     }
@@ -109,6 +109,20 @@ public class List <E>
         second.setNextCell(first);
         toReturn.head = second;
         return toReturn;
+    }
+
+    // generic function for comparison between to Comparable objects.
+    public <E extends Comparable> E max(List<E> comparableList)
+    {
+        Cell cell = comparableList.getHead();
+        E max = (E)cell.getData();
+        for (; cell != null; cell = cell.getNextCell())
+        {
+            E temp = (E)cell.getData();
+            if (temp.compareTo(max)>0)
+                max = temp;
+        }
+        return max;
     }
 }
 

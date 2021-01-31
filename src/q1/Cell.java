@@ -15,7 +15,7 @@ public class Cell <E>
     }
 
     // Constructor #2 - Creates a Node with a data for the new node & the next node to be attached to.
-    public Cell(E data, Cell nextCell)
+    public Cell(E data, Cell <E> nextCell)
     {
         this.setData(data);
         this.setNextCell(nextCell);

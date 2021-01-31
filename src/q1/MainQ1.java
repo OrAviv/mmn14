@@ -26,20 +26,6 @@ public class MainQ1
         personList.add(new Person("moshe", 2233, 2001));
         personList.add(new Person("asher", 3456, 1980));
         personList.add(new Person("jhon", 7675, 1981));
-        System.out.println("Oldest person in Persons q1.List: "+max(personList).toString());
-    }
-
-    // generic function for comparison between to Comparable objects.
-    public static <E extends Comparable> E max(List<E> comparableList)
-    {
-        Cell cell = comparableList.getHead();
-        E max = (E)cell.getData();
-        for (; cell != null; cell = cell.getNextCell())
-        {
-            E temp = (E)cell.getData();
-            if (temp.compareTo(max)>0)
-                max = temp;
-        }
-        return max;
+        System.out.println("Oldest person in Persons q1.List: "+personList.max(personList).toString());
     }
 }
